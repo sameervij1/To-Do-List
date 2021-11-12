@@ -1,12 +1,10 @@
-import logo from './logo.svg';
 import './App.css';
-import Details from './Details.js'
-import TaskButton from './TaskButton';
+import TaskObject from './TaskObject';
 function App() {
   return (
     <div className="App">
-        <TaskButton />
-        <Details details = "test" />
+        <h1> Reminders </h1>
+        <TaskObject taskDetails = "test"></TaskObject>
     </div>
   );
 }
