@@ -2,8 +2,29 @@ import React from 'react';
 import {Button} from 'react-bootstrap';
 
 class NewReminderButton extends React.Component {
+    constructor(props) {
+        super(props);
+        this.state = {value: ''};
+    
+        this.handleChange = this.handleChange.bind(this);
+        this.handleSubmit = this.handleSubmit.bind(this);
+      }
+    
+      handleChange(event) {
+        this.setState({value: event.target.value});
+      }
+    
+      handleSubmit(event) {
+        event.preventDefault();
+      }
     render() {
-        return <Button title = "Create a new Reminder"> + New Reminder </Button>;
+    return <form onSubmit={this.handleSubmit}>
+        <label>
+           New Reminder:
+        <input type="text" value={this.state.value} onChange={this.handleChange}/>
+        </label>
+        <input type="submit" value="+"/>
+      </form>;
     }
 }
 
