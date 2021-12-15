@@ -17,6 +17,7 @@ class NewReminderButton extends React.Component {
       handleSubmit(event) {
         event.preventDefault();
         this.props.onButtonSubmit(this.state.value);
+        this.setState({value: ''});
       }
     render() {
     return <form onSubmit={this.handleSubmit}>
