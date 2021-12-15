@@ -1,5 +1,5 @@
 import React from 'react';
-import {Button} from 'react-bootstrap';
+
 
 class NewReminderButton extends React.Component {
     constructor(props) {
@@ -16,6 +16,7 @@ class NewReminderButton extends React.Component {
     
       handleSubmit(event) {
         event.preventDefault();
+        this.props.onButtonSubmit(this.state.value);
       }
     render() {
     return <form onSubmit={this.handleSubmit}>
