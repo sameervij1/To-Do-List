@@ -23,9 +23,9 @@ class NewReminderButton extends React.Component {
     return <form style = {{position: "absolute", left: "40%", top: 80}} onSubmit={this.handleSubmit}>
         <label>
           
-        <input type="text" placeholder = "task" value={this.state.value} onChange={this.handleChange}/>
+        <input type="text" placeholder = "Add New Task" value={this.state.value} onChange={this.handleChange}/>
         </label>
-        <input type="submit" value="Add Task"/>
+        <input type="submit" style = {{cursor: "pointer"}} value="Add Task"/>
       </form>;
     }
 }

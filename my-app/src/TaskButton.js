@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 const buttonStyle = {
-    display: 'inline-block'
+    display: 'inline-block',
+    cursor: "pointer"
 }
 
 function TaskButton(props) {
