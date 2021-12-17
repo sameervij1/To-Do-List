@@ -19,9 +19,13 @@ class ToDoList extends React.Component {
         const newTasks = this.state.tasks.filter((task) => task !== taskDetails);
         this.setState({tasks: newTasks});
       }
-      onTaskButtonCheck(taskDetails) {  
-        const newTasks = this.state.tasks.filter((task) => task !== taskDetails);
-        this.setState({tasks: newTasks});
+      onTaskButtonCheck(taskDetails) {
+          var that = this;
+        setTimeout(function(){
+            const newTasks = that.state.tasks.filter((task) => task !== taskDetails);
+            that.setState({tasks: newTasks});
+        }, 5000);  
+        
       }
       onButtonSubmit(newTask) {
           console.log(newTask);

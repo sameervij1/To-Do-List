@@ -8,8 +8,10 @@ class TaskObject extends React.Component {
         super(props);
         this.onButtonChange = this.onButtonChange.bind(this);
         this.onDelete = this.onDelete.bind(this);
+        this.state = {isDone: false};
       }
     onButtonChange(isChecked) {
+        this.setState({isDone: true})
         this.props.onTaskButtonCheck(this.props.taskDetails)
     }
     onDelete() {
@@ -17,9 +19,9 @@ class TaskObject extends React.Component {
     }
     render() {
         return <div style = {{position: "absolute", left: "40%", top: this.props.index * 30 + 100}}> 
-        <TaskButton id = {this.props.taskDetails} onButtonChange = {this.onButtonChange}/>
-        <DeleteButton onDelete = {this.onDelete}></DeleteButton>
-        <Details details = {this.props.taskDetails} />
+        {this.state.isDone
+        ? <p><s>{this.props.taskDetails}</s></p>
+        : <span><TaskButton id = {this.props.taskDetails} onButtonChange = {this.onButtonChange}/> <DeleteButton onDelete = {this.onDelete}/><Details details = {this.props.taskDetails}/> </span>}
          </div>;
     }
 }
