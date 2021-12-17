@@ -11,7 +11,7 @@ class TaskObject extends React.Component {
         this.props.onTaskButtonCheck(this.props.taskDetails)
     }
     render() {
-        return <div className="App"> <TaskButton onButtonChange = {this.onButtonChange}/><Details details = {this.props.taskDetails} /> </div>;
+        return <div style = {{position: "absolute", left: "40%", top: this.props.index * 25 + 60}}> <TaskButton onButtonChange = {this.onButtonChange}/><Details details = {this.props.taskDetails} /> </div>;
     }
 }
 
