@@ -19,11 +19,11 @@ class ToDoList extends React.Component {
           this.setState({ tasks: joined });
       }
     render() {
-        return <div style = {{position: "relative"}}> <h1 style = {{position: "absolute", left: "40%", top:0}}> Reminders </h1> 
+        return <div style = {{position: "relative"}}> <h1 style = {{position: "absolute", left: "40%", top:0}}> Todo List </h1>
+        <NewReminderButton onButtonSubmit = {this.onButtonSubmit} tasksAbove = {this.state.tasks.length}> </NewReminderButton> 
         {this.state.tasks.map((task, index) => (
             <TaskObject key = {task} index = {index} onTaskButtonCheck = {this.onTaskButtonCheck} taskDetails = {task}> </TaskObject>
         ))}
-        <NewReminderButton onButtonSubmit = {this.onButtonSubmit} tasksAbove = {this.state.tasks.length}> </NewReminderButton>
         </div>;
     }
 }
