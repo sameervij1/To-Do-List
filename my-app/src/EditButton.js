@@ -1,20 +1,19 @@
 const buttonStyle = {
     position: "relative",
-    margin: "5px 0px",
+    margin: "10px 5px",
     display: "inline-block",
-    color: 'red',
     padding: 0,
     border: "none",
     background: "none",
     cursor: "pointer",
     fontSize: 15
 }
-function DeleteButton(props){
-    const onDelete = () => {
-        props.onDelete()
+function EditButton(props){
+    const onEdit = () => {
+        props.onEdit()
     }
     return <span><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"></link>
-    <button onClick = {onDelete} style = {buttonStyle} class="btn"><i class="fa fa-trash"></i></button> </span>;
+    <button onClick = {onEdit} style = {buttonStyle}><i class="fa fa-edit"></i></button> </span>;
 }
 
-export default DeleteButton;
+export default EditButton;
